@@ -4,9 +4,12 @@ This repository follows on from a [twitter
 thread](https://twitter.com/xenophar/status/1134799173738303489) where I
 mentioned that numba appeared to work faster than JAX for a particular code
 example. I fully expect that things can be recoded to be fast in JAX, too, but
-I'm not quite sure how to do it!
+I'm not quite sure how to do it! I suspect the main culprit might be changing
+shapes in the arguments, which force JAX to recompile things frequently (?). I
+am hoping that the improvements required to make it fast could be illustrative
+for new JAX users.
 
-It contains the following files:
+The repository contains the following files:
 
 * `glicko_jax.py` and `glicko_numba.py` are exactly the same code (see diff
   below), except that the JAX file has `import jax.numpy as np` and uses `@jit`
