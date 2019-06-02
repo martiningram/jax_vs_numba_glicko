@@ -24,6 +24,9 @@ The repository contains the following files:
   `calculate_approximate_approximate_likelihood`. I've left them in for now
   though to have the code as similar to `numba` as possible.
 
+* The naive approach of just substituting the `jit` lines clearly doesn't work
+  well, as JAX runs very slowly (20 s vs 121 ms for numba).
+
 ### Diff
 
 Result of running `diff glicko_jax.py glicko_numba.py`:
