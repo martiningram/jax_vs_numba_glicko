@@ -79,6 +79,7 @@ def calculate_single_mu_update(mu: float, opp_sigma_sq: float, s: np.ndarray,
     return np.sum(g * (s - calculate_e(mu, opp_mu, opp_sigma_sq)))
 
 
+@jit
 def calculate_mu_prime(mu: float, sigma_sq: float, delta_sq: float,
                        s_jk: List[np.ndarray], mu_j: np.ndarray,
                        sigma_j_sq: np.ndarray) -> float:
@@ -116,6 +117,7 @@ def calculate_mu_prime(mu: float, sigma_sq: float, delta_sq: float,
     return mu + total_update
 
 
+@jit
 def calculate_approximate_likelihood(mu: float, sigma_sq: float,
                                      n_j: np.ndarray, mu_j: np.ndarray,
                                      sigma_j_sq: np.ndarray,
