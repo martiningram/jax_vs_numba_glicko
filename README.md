@@ -17,6 +17,13 @@ The repository contains the following files:
 
 * `Benchmark.ipynb` generates some fake data and runs both with timings.
 
+### Requirements
+
+* python 3.5+
+* numba
+* JAX (I used 0.1.35)
+* jupyter
+
 ### Notes
 
 * I noticed that JAX ran a bit more quickly without the `@jit` decorators for
