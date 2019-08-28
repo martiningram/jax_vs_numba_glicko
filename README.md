@@ -17,6 +17,9 @@ The repository contains the following files:
 
 * `Benchmark.ipynb` generates some fake data and runs both with timings.
 
+* There is now also Julia code contributed by [James Bradbury](https://github.com/jekbradbury). 
+  `benchmark.jl` benchmarks the Julia version.
+
 ### Requirements
 
 * python 3.5+
@@ -32,7 +35,10 @@ The repository contains the following files:
   though to have the code as similar to `numba` as possible.
 
 * The naive approach of just substituting the `jit` lines clearly doesn't work
-  well, as JAX runs very slowly (20 s vs 121 ms for numba).
+  well, as JAX runs very slowly (20 s vs 121 ms for numba). The Julia code is
+  exceptionally fast: if I am interpreting the benchmark.jl output correctly,
+  it runs each loop in about 2.4µs on my machine, compared to 120ms / 1000 = 120µs 
+  for the numba version.
 
 ### Diff
 
